@@ -52,11 +52,11 @@ const NavBar = () => {
       <div className="container max-w-7xl h-full mx-auto flex flex-wrap p-5 flex-row items-center justify-between">
         <Link
           href="/"
-          className="flex title-font  font-semibold items-center text-dark dark:text-white mb-0"
+          className="flex title-font  font-bold items-center text-dark dark:text-white mb-0"
         >
           <span className="ml-3 text-xl">Blocks</span>
         </Link>
-        <nav className="hidden md:ml-auto md:mr-auto md:flex flex-wrap items-center text-base font-medium justify-center">
+        <nav className="hidden md:ml-auto md:mr-auto md:flex flex-wrap items-center text-base font-semibold justify-center">
           <Link
             href={"/#about"}
             onClick={handleScroll}

@@ -19,14 +19,12 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning={true} className={inter.className}>
       <body
-        className="min-h-screen pt-12 bg-slate-00  dark:bg-[#020817] antialiased"
+        className="min-h-screen bg-slate-200  dark:bg-[#020817] antialiased"
         suppressHydrationWarning={true}
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <NavBar />
-          <div className="container max-w-7xl mx-auto h-full pt-12">
-            {children}
-          </div>
+          {children}
         </ThemeProvider>
       </body>
     </html>
