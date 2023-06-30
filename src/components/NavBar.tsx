@@ -43,16 +43,16 @@ const NavBar = () => {
 
   return (
     <header
-      className={`fixed -top-1 inset-x-0 h-fit z-[50] py-2 ${
+      className={`fixed -top-1 shadow inset-x-0 h-fit z-[50] py-2 ${
         fix
-          ? "dark:bg-dark/50 bg-white/10 transition-all duration-[0.3s] ease-in-out backdrop-blur-sm"
-          : "bg-transparent"
+          ? "dark:bg-dark/50 bg-white text-dark dark:text-white transition-all duration-[0.3s] ease-in-out backdrop-blur-sm"
+          : "bg-transparent text-white"
       }`}
     >
       <div className="container max-w-7xl h-full mx-auto flex flex-wrap p-5 flex-row items-center justify-between">
         <Link
           href="/"
-          className="flex title-font  font-bold items-center text-dark dark:text-white mb-0"
+          className="flex title-font  font-bold items-center  mb-0"
         >
           <span className="ml-3 text-xl">Blocks</span>
         </Link>
@@ -85,7 +85,7 @@ const NavBar = () => {
             Contact Us
           </Link>
         </nav>
-        <div className="inline-flex items-center mt-0 mr-2">
+        <div className="inline-flex text-dark dark:text-white items-center mt-0 mr-2">
           <ModeToggle />
           <MobileNav />
         </div>
