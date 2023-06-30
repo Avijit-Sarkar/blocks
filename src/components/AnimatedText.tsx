@@ -1,9 +1,14 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 
-const quote = {
+interface AnimatedTextProps {
+  text: string;
+  className?: string;
+}
+
+const quote: Variants = {
   initial: {
     opacity: 1,
   },
@@ -16,7 +21,7 @@ const quote = {
   },
 };
 
-const singleWord = {
+const singleWord: Variants = {
   initial: {
     opacity: 0,
     y: 50,
@@ -30,7 +35,10 @@ const singleWord = {
   },
 };
 
-const AnimatedText = ({ text, className = "" }) => {
+const AnimatedText: React.FC<AnimatedTextProps> = ({
+  text,
+  className = "",
+}) => {
   return (
     <div className="w-full mx-auto py-2 flex items-center justify-center text-center overflow-hidden sm:py-0">
       <motion.h1

@@ -8,10 +8,9 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/Dropdown-menu";
-import { Button } from "./ui/Button";
-import { AlignJustify, X } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { AlignJustify } from "lucide-react";
 import Link from "next/link";
+import { Button } from "./ui/Button";
 
 const MobileNav = () => {
   const handleScroll = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
@@ -29,7 +28,11 @@ const MobileNav = () => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="outline" className="ml-2" size="icon">
+        <Button
+          variant="outline"
+          className="ml-2 inline-flex md:hidden"
+          size="icon"
+        >
           <AlignJustify className="h-[1.2rem] w-[1.2rem] " />
         </Button>
       </DropdownMenuTrigger>
