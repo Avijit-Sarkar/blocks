@@ -18,6 +18,8 @@ module.exports = {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         dark: "#020817",
+        prime: "#20ACEA",
+        primeDark: "#58E6D9",
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
