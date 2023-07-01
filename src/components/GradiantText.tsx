@@ -11,13 +11,13 @@ const GradientText: React.FC<GradientTextProps> = ({
 }) => {
   return (
     <div
-      className={`w-full mx-auto py-2 m-5 z-0 absolute flex justify-start items-start cursor-default select-none overflow-hidden sm:py-0 bg-gradient-to-t dark:from-dark dark:via-slate-800 dark:to-slate-500 from-slate-100 via-slate-300 to-slate-700 ${className}`}
+      className={`max-w-7xl mx-auto py-2 z-0 absolute flex justify-start items-start cursor-default select-none overflow-hidden bg-gradient-to-t dark:from-dark dark:via-slate-800 dark:to-slate-500 from-slate-100 via-slate-400/70 to-slate-700 ${className}`}
       style={{
         WebkitBackgroundClip: "text",
         WebkitTextFillColor: "transparent",
       }}
     >
-      <h1 className="inline-block items-start justify-start w-full font-bold capitalize text-[6rem] lg:text-[15rem]">
+      <h1 className="inline-block items-start justify-start font-bold capitalize text-[90px] md:text-[10rem] lg:text-[15rem]">
         {text.split(" ").map((word, index) => (
           <span key={word + "-" + index} className="inline-block">
             {word}&nbsp;
