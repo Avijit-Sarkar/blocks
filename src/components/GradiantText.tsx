@@ -1,13 +1,15 @@
 import React from "react";
 
-interface GradientTextProps {
+interface GradiantTextProps {
   text: string;
   className?: string;
+  textSizes?: string;
 }
 
-const GradientText: React.FC<GradientTextProps> = ({
+const GradiantText: React.FC<GradiantTextProps> = ({
   text,
   className = "",
+  textSizes = "",
 }) => {
   return (
     <div
@@ -17,7 +19,9 @@ const GradientText: React.FC<GradientTextProps> = ({
         WebkitTextFillColor: "transparent",
       }}
     >
-      <h1 className="inline-block items-start justify-start font-bold capitalize text-[90px] md:text-[10rem] lg:text-[15rem]">
+      <h1
+        className={`inline-block items-start justify-start font-bold capitalize text-[90px] md:text-[10rem] lg:text-[15rem] ${textSizes}`}
+      >
         {text.split(" ").map((word, index) => (
           <span key={word + "-" + index} className="inline-block">
             {word}&nbsp;
@@ -28,4 +32,4 @@ const GradientText: React.FC<GradientTextProps> = ({
   );
 };
 
-export default GradientText;
+export default GradiantText;
