@@ -10,7 +10,7 @@ function Banner() {
                 text="Turning Vision Into Reality With Code And Design."
                 className=" !text-left xl:!text-5xl md:!text-center lg:!text-6xl md:!text-5xl !text-3xl"
               />
-              <span className="hidden md:flex mt-5 mb-8 mx-auto h-0.5 w-20 bg-white"></span>
+              <span className="hidden md:flex mt-5 mb-8 mx-auto h-0.5 w-20 bg-blue-700"></span>
               <p className="my-4 text-base font-medium lg:px-5 ">
                 As a skilled full-stack developer, I am dedicated to turning
                 ideas into innovative web applications. Explore my latest

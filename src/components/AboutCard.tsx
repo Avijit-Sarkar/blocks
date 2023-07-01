@@ -10,7 +10,7 @@ const AboutCard: FC<AboutCardProps> = ({}) => {
         <Image
           className="w-24 h-24 md:w-60 md:h-auto md:rounded-md object-cover rounded-full mx-auto"
           src="/img/charlie.jpg"
-          alt="profile image"
+          alt="profile-image"
           width="384"
           height="512"
         />
