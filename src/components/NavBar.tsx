@@ -45,7 +45,7 @@ const NavBar = () => {
     <header
       className={`fixed -top-1 shadow inset-x-0 h-fit z-[50] py-2 ${
         fix
-          ? "dark:bg-dark/50 bg-white text-dark dark:text-white transition-all duration-[0.3s] ease-in-out backdrop-blur-sm"
+          ? "dark:bg-dark/50 bg-white text-dark dark:text-white transition-all duration-&lsqb;0.3s&rsqb; ease-in-out backdrop-blur-sm"
           : "bg-transparent text-white"
       }`}
     >

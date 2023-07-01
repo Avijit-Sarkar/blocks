@@ -6,7 +6,7 @@ interface AboutCardProps {}
 const AboutCard: FC<AboutCardProps> = ({}) => {
   return (
     <div>
-      <figure className="md:flex items-center justify-center bg-white rounded-xl p-8 md:p-0 dark:bg-slate-800">
+      <figure className="md:flex relative items-center justify-center bg-white rounded-xl p-8 md:p-0 dark:bg-slate-800">
         <Image
           className="w-24 h-24 md:w-60 md:h-auto md:rounded-md object-cover rounded-full mx-auto"
           src="/img/charlie.jpg"
