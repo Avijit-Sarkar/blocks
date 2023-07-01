@@ -52,7 +52,7 @@ const ExperienceCard: FC<ExperienceCardProps> = ({}) => {
     layoutEffect: false,
   });
   return (
-    <div ref={ref} className="mx-auto relative w-full">
+    <div ref={ref} className="mx-auto relative w-full md:w-[90%]">
       <motion.div
         style={{ scaleY: scrollYProgress }}
         className="absolute  top-0 w-[4px] h-full bg-prime origin-top dark:bg-primeDark md:w-[2px] md:left-[30px] left-[18px]"
