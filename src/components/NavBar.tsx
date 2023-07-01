@@ -46,7 +46,7 @@ const NavBar = () => {
       className={`fixed -top-1 shadow inset-x-0 h-fit z-[50] py-2 ${
         fix
           ? "dark:bg-dark/50 bg-white text-dark dark:text-white transition-all duration-&lsqb;0.3s&rsqb; ease-in-out backdrop-blur-sm"
-          : "bg-transparent text-white"
+          : "bg-transparent text-white "
       }`}
     >
       <div className="container max-w-7xl h-full mx-auto flex flex-wrap p-5 flex-row items-center justify-between">
@@ -60,7 +60,7 @@ const NavBar = () => {
           <Link
             href={"/#about"}
             onClick={handleScroll}
-            className="mr-5 hover:scale-110 dark:hover:text-white hover:text-dark"
+            className="mr-5 hover:scale-110 "
           >
             About
           </Link>
@@ -68,20 +68,18 @@ const NavBar = () => {
           <Link
             href={"/#experience"}
             onClick={handleScroll}
-            className="mr-5 hover:scale-110 dark:hover:text-white hover:text-dark"
+            className="mr-5 hover:scale-110 "
           >
             Experience
           </Link>
           <Link
-            href={""}
-            className="mr-5 hover:scale-110 dark:hover:text-white hover:text-dark"
+            href={"/#works"}
+            onClick={handleScroll}
+            className="mr-5 hover:scale-110 "
           >
             Works
           </Link>
-          <Link
-            href={""}
-            className="mr-5 hover:scale-110 dark:hover:text-white hover:text-dark"
-          >
+          <Link href={""} className="mr-5 hover:scale-110 ">
             Contact Us
           </Link>
         </nav>
