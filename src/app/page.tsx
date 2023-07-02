@@ -1,5 +1,6 @@
 import About from "@/components/About";
 import Banner from "@/components/Banner";
+import Contact from "@/components/Contact";
 import Experience from "@/components/Experience";
 import Works from "@/components/Works";
 
@@ -16,6 +17,7 @@ export default function Home() {
       <About />
       <Experience />
       <Works />
+      <Contact />
     </>
   );
 }

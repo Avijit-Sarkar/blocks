@@ -79,7 +79,11 @@ const NavBar = () => {
           >
             Works
           </Link>
-          <Link href={""} className="mr-5 hover:scale-110 ">
+          <Link
+            href={"/#contact"}
+            onClick={handleScroll}
+            className="mr-5 hover:scale-110 "
+          >
             Contact Us
           </Link>
         </nav>
