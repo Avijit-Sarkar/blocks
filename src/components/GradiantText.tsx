@@ -13,7 +13,7 @@ const GradiantText: React.FC<GradiantTextProps> = ({
 }) => {
   return (
     <div
-      className={`max-w-7xl mx-auto py-2 z-0 absolute flex justify-start items-start cursor-default select-none overflow-hidden bg-gradient-to-t dark:from-dark dark:via-slate-800 dark:to-slate-500 from-slate-100 via-slate-400/70 to-slate-700 ${className}`}
+      className={`max-w-7xl mx-auto py-2 z-0 absolute flex justify-start items-start cursor-default select-none overflow-hidden bg-gradient-to-t dark:from-dark dark:via-slate-800 dark:to-slate-500 from-white via-slate-500 to-dark ${className}`}
       style={{
         WebkitBackgroundClip: "text",
         WebkitTextFillColor: "transparent",
