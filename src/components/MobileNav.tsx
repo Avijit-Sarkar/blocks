@@ -44,8 +44,10 @@ const MobileNav: React.FC<MobileNavProps> = ({
             smooth={true}
             onSetActive={handleSetActive}
             className={`${
-              activeSection === "about" ? "text-white" : "text-gray-300"
-            } cursor-pointer mr-5 hover:scale-110`}
+              activeSection === "about"
+                ? "dark:text-white"
+                : "dark:text-gray-300"
+            }  mr-5 `}
           >
             About
           </Link>
@@ -58,8 +60,10 @@ const MobileNav: React.FC<MobileNavProps> = ({
             smooth={true}
             onSetActive={handleSetActive}
             className={`${
-              activeSection === "experience" ? "text-white" : "text-gray-300"
-            } cursor-pointer mr-5 hover:scale-110`}
+              activeSection === "experience"
+                ? "dark:text-white"
+                : "dark:text-gray-300"
+            }  mr-5 `}
           >
             Experience
           </Link>
@@ -72,8 +76,10 @@ const MobileNav: React.FC<MobileNavProps> = ({
             smooth={true}
             onSetActive={handleSetActive}
             className={`${
-              activeSection === "works" ? "text-white" : "text-gray-300"
-            } cursor-pointer mr-5 hover:scale-110`}
+              activeSection === "works"
+                ? "dark:text-white"
+                : "dark:text-gray-300"
+            }  mr-5 `}
           >
             Works
           </Link>
@@ -86,8 +92,10 @@ const MobileNav: React.FC<MobileNavProps> = ({
             smooth={true}
             onSetActive={handleSetActive}
             className={`${
-              activeSection === "contact" ? "text-white" : "text-gray-300"
-            } cursor-pointer mr-5 hover:scale-110`}
+              activeSection === "contact"
+                ? "dark:text-white"
+                : "dark:text-gray-300"
+            }  mr-5 `}
           >
             Contact
           </Link>

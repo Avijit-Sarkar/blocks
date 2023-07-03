@@ -69,7 +69,9 @@ const Navbar = () => {
             smooth={true}
             onSetActive={handleSetActive}
             className={`${
-              activeSection === "about" ? "text-white" : "text-gray-300"
+              activeSection === "about"
+                ? "text-prime dark:text-white scale-110"
+                : "dark:text-gray-300"
             } cursor-pointer mr-5 hover:scale-110`}
           >
             About
@@ -81,7 +83,9 @@ const Navbar = () => {
             smooth={true}
             onSetActive={handleSetActive}
             className={`${
-              activeSection === "experience" ? "text-white" : "text-gray-300"
+              activeSection === "experience"
+                ? "text-prime dark:text-white scale-110"
+                : "dark:text-gray-300"
             } cursor-pointer mr-5 hover:scale-110`}
           >
             Experience
@@ -93,7 +97,9 @@ const Navbar = () => {
             smooth={true}
             onSetActive={handleSetActive}
             className={`${
-              activeSection === "works" ? "text-white" : "text-gray-300"
+              activeSection === "works"
+                ? "text-prime dark:text-white scale-110"
+                : "dark:text-gray-300"
             } cursor-pointer mr-5 hover:scale-110`}
           >
             Works
@@ -105,7 +111,9 @@ const Navbar = () => {
             smooth={true}
             onSetActive={handleSetActive}
             className={`${
-              activeSection === "contact" ? "text-white" : "text-gray-300"
+              activeSection === "contact"
+                ? "text-prime dark:text-white scale-110"
+                : "dark:text-gray-300"
             } cursor-pointer mr-5 hover:scale-110`}
           >
             Contact Us
