@@ -9,22 +9,18 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/Dropdown-menu";
 import { AlignJustify } from "lucide-react";
-import Link from "next/link";
 import { Button } from "./ui/Button";
+import { Link } from "react-scroll";
 
-const MobileNav = () => {
-  const handleScroll = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
-    // first prevent the default behavior
-    e.preventDefault();
-    // get the href and remove everything before the hash (#)
-    const href = e.currentTarget.href;
-    const targetId = href.replace(/.*\#/, "");
-    // get the element by id and use scrollIntoView
-    const elem = document.getElementById(targetId);
-    elem?.scrollIntoView({
-      behavior: "smooth",
-    });
-  };
+interface MobileNavProps {
+  activeSection: string;
+  handleSetActive: (section: string) => void;
+}
+
+const MobileNav: React.FC<MobileNavProps> = ({
+  activeSection,
+  handleSetActive,
+}) => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -34,29 +30,66 @@ const MobileNav = () => {
           size="icon"
         >
           <AlignJustify className="h-[1.2rem] w-[1.2rem] " />
+          <span className="sr-only">Navigation Menu</span>
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
         <DropdownMenuLabel>Navigation Menu</DropdownMenuLabel>
         <DropdownMenuSeparator />
         <DropdownMenuItem>
-          <Link onClick={handleScroll} href="/#about">
+          <Link
+            activeClass="active"
+            to="about"
+            spy={true}
+            smooth={true}
+            onSetActive={handleSetActive}
+            className={`${
+              activeSection === "about" ? "text-white" : "text-gray-300"
+            } cursor-pointer mr-5 hover:scale-110`}
+          >
             About
           </Link>
         </DropdownMenuItem>
         <DropdownMenuItem>
-          <Link onClick={handleScroll} href="/#experience">
+          <Link
+            activeClass="active"
+            to="experience"
+            spy={true}
+            smooth={true}
+            onSetActive={handleSetActive}
+            className={`${
+              activeSection === "experience" ? "text-white" : "text-gray-300"
+            } cursor-pointer mr-5 hover:scale-110`}
+          >
             Experience
           </Link>
         </DropdownMenuItem>
         <DropdownMenuItem>
-          <Link onClick={handleScroll} href="/#works">
+          <Link
+            activeClass="active"
+            to="works"
+            spy={true}
+            smooth={true}
+            onSetActive={handleSetActive}
+            className={`${
+              activeSection === "works" ? "text-white" : "text-gray-300"
+            } cursor-pointer mr-5 hover:scale-110`}
+          >
             Works
           </Link>
         </DropdownMenuItem>
         <DropdownMenuItem>
-          <Link onClick={handleScroll} href="/#contact">
-            Contact Us
+          <Link
+            activeClass="active"
+            to="contact"
+            spy={true}
+            smooth={true}
+            onSetActive={handleSetActive}
+            className={`${
+              activeSection === "contact" ? "text-white" : "text-gray-300"
+            } cursor-pointer mr-5 hover:scale-110`}
+          >
+            Contact
           </Link>
         </DropdownMenuItem>
       </DropdownMenuContent>

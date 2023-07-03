@@ -1,10 +1,9 @@
 import NavBar from "@/components/NavBar";
 import { ThemeProvider } from "@/components/theme-provider";
-import { cn } from "@/lib/utils";
 import "@/styles/globals.css";
-import { Inter, Montserrat } from "next/font/google";
+import { Montserrat } from "next/font/google";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Montserrat({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Blocks",

@@ -13,6 +13,7 @@ const AboutCard: FC<AboutCardProps> = ({}) => {
           alt="profile-image"
           width="384"
           height="512"
+          loading="lazy"
         />
         <div className="pt-6 md:p-8 md:px-16 text-center md:text-left space-y-4">
           <blockquote>
@@ -24,7 +25,7 @@ const AboutCard: FC<AboutCardProps> = ({}) => {
           </blockquote>
           <div className="flex items-center lg:justify-end">
             <figcaption className=" font-medium">
-              <div className="text-sky-500 dark:text-sky-400">Sarah Dayan</div>
+              <div className="text-sky-500">Sarah Dayan</div>
               <div className="text-slate-700 dark:text-slate-500">
                 Staff Engineer, Algolia
               </div>

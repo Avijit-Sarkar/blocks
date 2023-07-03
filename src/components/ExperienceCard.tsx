@@ -25,7 +25,7 @@ const Details = ({
         whileInView={{ y: 0 }}
         transition={{ duration: 0.5, type: "spring" }}
       >
-        <h3 className="capitalize font-bold text-2xl sm:text-xl ">
+        <h2 className="capitalize font-bold text-2xl sm:text-xl ">
           {position}&nbsp;
           <a
             href={companyLink}
@@ -34,7 +34,7 @@ const Details = ({
           >
             @{company}
           </a>
-        </h3>
+        </h2>
         <span className="capitalize font-medium text-dark/75 dark:text-white/75 ">
           {time} | {address}
         </span>

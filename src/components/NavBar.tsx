@@ -1,99 +1,126 @@
 "use client";
 
-import Link from "next/link";
+import { useState, useLayoutEffect } from "react";
+import { Link, animateScroll as scroll } from "react-scroll";
 import { ModeToggle } from "./ModeToggle";
 import MobileNav from "./MobileNav";
-import { useEffect, useState } from "react";
 
-const NavBar = () => {
-  const [fix, setFix] = useState(false);
+const Navbar = () => {
+  const [navbarBg, setNavbarBg] = useState(false);
+  const [activeSection, setActiveSection] = useState("");
 
-  useEffect(() => {
-    const handlescroll = () => {
-      // Handle scroll logic for small screens (less than 768px width)
+  useLayoutEffect(() => {
+    const storedNavbarBg = localStorage.getItem("navbarBg");
+    if (storedNavbarBg) {
+      setNavbarBg(JSON.parse(storedNavbarBg));
+    }
 
-      if (window.scrollY >= 10) {
-        setFix(true);
-      } else {
-        setFix(false);
-      }
-    };
-
-    // Attach the scroll event listener
-    window.addEventListener("scroll", handlescroll);
-
-    // Clean up the event listener on component unmount
+    window.addEventListener("scroll", handleScroll);
     return () => {
-      window.removeEventListener("scroll", handlescroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
-  const handleScroll = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
-    // first prevent the default behavior
-    e.preventDefault();
-    // get the href and remove everything before the hash (#)
-    const href = e.currentTarget.href;
-    const targetId = href.replace(/.*\#/, "");
-    // get the element by id and use scrollIntoView
-    const elem = document.getElementById(targetId);
-    elem?.scrollIntoView({
-      behavior: "smooth",
-    });
+  useLayoutEffect(() => {
+    localStorage.setItem("navbarBg", JSON.stringify(navbarBg));
+  }, [navbarBg]);
+
+  const handleScroll = () => {
+    if (window.scrollY > 0) {
+      setNavbarBg(true);
+    } else {
+      setNavbarBg(false);
+    }
+  };
+
+  const handleSetActive = (to: string) => {
+    setActiveSection(to);
   };
 
   return (
-    <header
-      className={`fixed -top-1 shadow inset-x-0 h-fit z-[50] py-2 ${
-        fix
-          ? "dark:bg-dark/50 bg-white text-dark dark:text-white transition-all duration-&lsqb;0.3s&rsqb; ease-in-out backdrop-blur-sm"
-          : "bg-transparent text-white "
+    <nav
+      className={`fixed top-0  w-full shadow inset-x-0 h-fit z-[50] py-2 transition-colors duration-300 ease-in-out ${
+        navbarBg
+          ? "dark:bg-dark/50 bg-white text-dark dark:text-white  backdrop-blur-sm"
+          : "bg-transparent text-white"
       }`}
     >
       <div className="container max-w-7xl h-full mx-auto flex flex-wrap p-5 flex-row items-center justify-between">
         <Link
-          href="/"
-          className="flex title-font  font-bold items-center  mb-0"
+          activeClass="active"
+          to="home"
+          spy={true}
+          smooth={true}
+          onSetActive={handleSetActive}
+          className={`${
+            activeSection === "home"
+          } cursor-pointer flex title-font  font-bold items-center  mb-0`}
         >
-          <span className="ml-3 text-xl">Blocks</span>
+          <span className="ml-3 text-xl" aria-label="Home">
+            Blocks
+          </span>
         </Link>
-        <nav className="hidden md:ml-auto md:mr-auto md:flex flex-wrap items-center text-base font-semibold justify-center">
+
+        <div className="hidden md:ml-auto md:mr-auto md:flex flex-wrap items-center text-base font-semibold justify-center">
           <Link
-            href={"/#about"}
-            onClick={handleScroll}
-            className="mr-5 hover:scale-110 "
+            activeClass="active"
+            to="about"
+            spy={true}
+            smooth={true}
+            onSetActive={handleSetActive}
+            className={`${
+              activeSection === "about" ? "text-white" : "text-gray-300"
+            } cursor-pointer mr-5 hover:scale-110`}
           >
             About
           </Link>
-
           <Link
-            href={"/#experience"}
-            onClick={handleScroll}
-            className="mr-5 hover:scale-110 "
+            activeClass="active"
+            to="experience"
+            spy={true}
+            smooth={true}
+            onSetActive={handleSetActive}
+            className={`${
+              activeSection === "experience" ? "text-white" : "text-gray-300"
+            } cursor-pointer mr-5 hover:scale-110`}
           >
             Experience
           </Link>
           <Link
-            href={"/#works"}
-            onClick={handleScroll}
-            className="mr-5 hover:scale-110 "
+            activeClass="active"
+            to="works"
+            spy={true}
+            smooth={true}
+            onSetActive={handleSetActive}
+            className={`${
+              activeSection === "works" ? "text-white" : "text-gray-300"
+            } cursor-pointer mr-5 hover:scale-110`}
           >
             Works
           </Link>
           <Link
-            href={"/#contact"}
-            onClick={handleScroll}
-            className="mr-5 hover:scale-110 "
+            activeClass="active"
+            to="contact"
+            spy={true}
+            smooth={true}
+            onSetActive={handleSetActive}
+            className={`${
+              activeSection === "contact" ? "text-white" : "text-gray-300"
+            } cursor-pointer mr-5 hover:scale-110`}
           >
             Contact Us
           </Link>
-        </nav>
+        </div>
         <div className="inline-flex text-dark dark:text-white items-center mt-0 mr-2">
           <ModeToggle />
-          <MobileNav />
+          <MobileNav
+            activeSection={activeSection}
+            handleSetActive={handleSetActive}
+          />
         </div>
       </div>
-    </header>
+    </nav>
   );
 };
 
-export default NavBar;
+export default Navbar;

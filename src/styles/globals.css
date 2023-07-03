@@ -76,3 +76,27 @@
     @apply bg-background text-foreground;
   }
 }
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animated-text {
+  display: inline-block;
+  width: 100%;
+  font-weight: bold;
+  text-transform: capitalize;
+  font-size: 8rem;
+  color: white;
+  animation: fade-in 1s;
+}
+
+.animated-word {
+  display: inline-block;
+}
