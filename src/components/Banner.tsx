@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { Link as ScrollLink } from "react-scroll";
-import AnimatedText from "./AnimatedText";
+const AnimatedText = dynamic(() => import("./AnimatedText"));
 import {
   ExternalLink,
   Facebook,
@@ -12,6 +12,7 @@ import {
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "./ui/Button";
 import Link from "next/link";
+import dynamic from "next/dynamic";
 
 function Banner() {
   return (

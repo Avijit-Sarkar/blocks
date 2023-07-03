@@ -1,4 +1,3 @@
-import NavBar from "@/components/NavBar";
 import { ThemeProvider } from "@/components/theme-provider";
 import "@/styles/globals.css";
 import { Montserrat } from "next/font/google";
@@ -22,7 +21,6 @@ export default function RootLayout({
         suppressHydrationWarning={true}
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <NavBar />
           {children}
         </ThemeProvider>
       </body>

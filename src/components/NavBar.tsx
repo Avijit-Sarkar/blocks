@@ -57,7 +57,7 @@ const Navbar = () => {
           } cursor-pointer flex title-font  font-bold items-center  mb-0`}
         >
           <span className="ml-3 text-xl" aria-label="Home">
-            Blocks
+            BLOCKS
           </span>
         </Link>
 
