@@ -1,4 +1,3 @@
-import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import Navbar from "@/components/NavBar";
 import dynamic from "next/dynamic";
@@ -16,8 +15,6 @@ export default function Home() {
       <Experience />
       <Works />
       <Contact />
-      <hr className="border-t border-solid border-slate-400 dark:border-slate-700" />
-      <Footer />
     </>
   );
 }
