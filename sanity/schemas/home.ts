@@ -9,22 +9,28 @@ export default defineType({
       name: "title",
       title: "Title",
       type: "string",
+      validation: (Rule) =>
+        Rule.required()
+          .min(10)
+          .max(45)
+          .warning("Shorter titles are usually better"),
     }),
     defineField({
-      name: "title",
-      title: "Title",
-      type: "string",
-    }),
-    defineField({
-      name: "author",
-      title: "Author",
-      type: "reference",
-      to: { type: "author" },
+      name: "tagLine",
+      title: "Tag Line",
+      type: "text",
+      validation: (Rule) =>
+        Rule.required()
+          .min(10)
+          .max(80)
+          .warning("Shorter tag lines are usually better"),
     }),
     defineField({
       name: "mainImage",
+      description: "webp image formates are easy and fast to load.",
       title: "Main image",
       type: "image",
+      validation: (Rule) => Rule.required(),
       options: {
         hotspot: true,
       },
@@ -33,36 +39,33 @@ export default defineType({
           name: "alt",
           type: "string",
           title: "Alternative Text",
+          validation: (Rule) => Rule.required().min(10).max(20),
         },
       ],
     }),
     defineField({
-      name: "categories",
-      title: "Categories",
-      type: "array",
-      of: [{ type: "reference", to: { type: "category" } }],
+      name: "facebook",
+      title: "Facebook",
+      type: "reference",
+      to: { type: "socialLinks" },
     }),
     defineField({
-      name: "publishedAt",
-      title: "Published at",
-      type: "datetime",
+      name: "twitter",
+      title: "Twitter",
+      type: "reference",
+      to: { type: "socialLinks" },
     }),
     defineField({
-      name: "body",
-      title: "Body",
-      type: "blockContent",
+      name: "instagram",
+      title: "Instagram",
+      type: "reference",
+      to: { type: "socialLinks" },
+    }),
+    defineField({
+      name: "linkedIn",
+      title: "LinkedIn",
+      type: "reference",
+      to: { type: "socialLinks" },
     }),
   ],
-
-  preview: {
-    select: {
-      title: "title",
-      author: "author.name",
-      media: "mainImage",
-    },
-    prepare(selection) {
-      const { author } = selection;
-      return { ...selection, subtitle: author && `by ${author}` };
-    },
-  },
 });
