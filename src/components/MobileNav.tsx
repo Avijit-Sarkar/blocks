@@ -11,6 +11,7 @@ import {
 import { AlignJustify } from "lucide-react";
 import { Button } from "./ui/Button";
 import { Link } from "react-scroll";
+import CustomMobLink from "./CustomMobLink";
 
 interface MobileNavProps {
   activeSection: string;
@@ -37,68 +38,36 @@ const MobileNav: React.FC<MobileNavProps> = ({
         <DropdownMenuLabel>Navigation Menu</DropdownMenuLabel>
         <DropdownMenuSeparator />
         <DropdownMenuItem>
-          <Link
-            activeClass="active"
+          <CustomMobLink
+            activeSection={activeSection}
+            handleSetActive={handleSetActive}
+            title="About"
             to="about"
-            spy={true}
-            smooth={true}
-            onSetActive={handleSetActive}
-            className={`${
-              activeSection === "about"
-                ? "dark:text-white"
-                : "dark:text-gray-300"
-            }  mr-5 `}
-          >
-            About
-          </Link>
+          />
         </DropdownMenuItem>
         <DropdownMenuItem>
-          <Link
-            activeClass="active"
+          <CustomMobLink
+            activeSection={activeSection}
+            handleSetActive={handleSetActive}
+            title="Experience"
             to="experience"
-            spy={true}
-            smooth={true}
-            onSetActive={handleSetActive}
-            className={`${
-              activeSection === "experience"
-                ? "dark:text-white"
-                : "dark:text-gray-300"
-            }  mr-5 `}
-          >
-            Experience
-          </Link>
+          />
         </DropdownMenuItem>
         <DropdownMenuItem>
-          <Link
-            activeClass="active"
+          <CustomMobLink
+            activeSection={activeSection}
+            handleSetActive={handleSetActive}
+            title="Works"
             to="works"
-            spy={true}
-            smooth={true}
-            onSetActive={handleSetActive}
-            className={`${
-              activeSection === "works"
-                ? "dark:text-white"
-                : "dark:text-gray-300"
-            }  mr-5 `}
-          >
-            Works
-          </Link>
+          />
         </DropdownMenuItem>
         <DropdownMenuItem>
-          <Link
-            activeClass="active"
+          <CustomMobLink
+            activeSection={activeSection}
+            handleSetActive={handleSetActive}
+            title="Contact"
             to="contact"
-            spy={true}
-            smooth={true}
-            onSetActive={handleSetActive}
-            className={`${
-              activeSection === "contact"
-                ? "dark:text-white"
-                : "dark:text-gray-300"
-            }  mr-5 `}
-          >
-            Contact
-          </Link>
+          />
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

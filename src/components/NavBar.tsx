@@ -1,9 +1,11 @@
 "use client";
 
 import { useState, useLayoutEffect } from "react";
-import { Link, animateScroll as scroll } from "react-scroll";
+import { Link } from "react-scroll";
 import { ModeToggle } from "./ModeToggle";
-import MobileNav from "./MobileNav";
+const MobileNav = dynamic(() => import("./MobileNav"));
+import CustomLink from "./CustomLink";
+import dynamic from "next/dynamic";
 
 const Navbar = () => {
   const [navbarBg, setNavbarBg] = useState(false);
@@ -62,62 +64,30 @@ const Navbar = () => {
         </Link>
 
         <div className="hidden md:ml-auto md:mr-auto md:flex flex-wrap items-center text-base font-semibold justify-center">
-          <Link
-            activeClass="active"
+          <CustomLink
+            activeSection={activeSection}
+            handleSetActive={handleSetActive}
+            title="About"
             to="about"
-            spy={true}
-            smooth={true}
-            onSetActive={handleSetActive}
-            className={`${
-              activeSection === "about"
-                ? "text-prime dark:text-white scale-110"
-                : "dark:text-gray-300"
-            } cursor-pointer mr-5 hover:scale-110`}
-          >
-            About
-          </Link>
-          <Link
-            activeClass="active"
+          />
+          <CustomLink
+            activeSection={activeSection}
+            handleSetActive={handleSetActive}
+            title="Experience"
             to="experience"
-            spy={true}
-            smooth={true}
-            onSetActive={handleSetActive}
-            className={`${
-              activeSection === "experience"
-                ? "text-prime dark:text-white scale-110"
-                : "dark:text-gray-300"
-            } cursor-pointer mr-5 hover:scale-110`}
-          >
-            Experience
-          </Link>
-          <Link
-            activeClass="active"
+          />
+          <CustomLink
+            activeSection={activeSection}
+            handleSetActive={handleSetActive}
+            title="Works"
             to="works"
-            spy={true}
-            smooth={true}
-            onSetActive={handleSetActive}
-            className={`${
-              activeSection === "works"
-                ? "text-prime dark:text-white scale-110"
-                : "dark:text-gray-300"
-            } cursor-pointer mr-5 hover:scale-110`}
-          >
-            Works
-          </Link>
-          <Link
-            activeClass="active"
+          />
+          <CustomLink
+            activeSection={activeSection}
+            handleSetActive={handleSetActive}
+            title="Contact"
             to="contact"
-            spy={true}
-            smooth={true}
-            onSetActive={handleSetActive}
-            className={`${
-              activeSection === "contact"
-                ? "text-prime dark:text-white scale-110"
-                : "dark:text-gray-300"
-            } cursor-pointer mr-5 hover:scale-110`}
-          >
-            Contact Us
-          </Link>
+          />
         </div>
         <div className="inline-flex text-dark dark:text-white items-center mt-0 mr-2">
           <ModeToggle />
